@@ -1,0 +1,16 @@
+
+<style>
+    .page-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 5px;
+    }
+
+    #page-text{
+        padding: 10px;
+    }
+</style>
+<div class="page-container">
+    <textarea id="page-text" rows="40" cols="100" [(ngModel)]="content" (input)="onContentChanges($event)"></textarea>
+</div>
