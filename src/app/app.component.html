@@ -1,0 +1,20 @@
+
+<style>
+.app-container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  
+}
+</style>
+
+<div class="app-container">
+  <button (click)="addPage()">+ Add page</button>
+  <div>
+    <label for="page-selector">Select Page</label>
+    <select name="page-selector" (change)="onPageChange($event)" [(ngModel)]="selectedPage">
+      <option *ngFor="let data of pagesData" [value]="data.pageNo">{{data.pageNo}}</option>
+    </select>
+  </div>
+</div>
+<app-page [content]="selectedPageObj.content" (pageContent) = "updatePageContent($event)"></app-page>
